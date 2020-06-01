@@ -28,7 +28,7 @@ module HTTP
         #   case of success.
         return self unless @parser.parse(@state, data)
 
-        raise IOError, "Could not parse data"
+        raise IOError, "Could not parse data: #{@state.error}"
       end
       alias << add
 
